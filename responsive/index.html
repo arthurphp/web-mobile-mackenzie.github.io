@@ -5,21 +5,94 @@
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
-
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta charset="UTF-8">
       <title>Web Mobile - Responsive Design</title>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script>
+        $(document).ready(function(){
+          $(".button-collapse").sideNav();
+        });
+      </script>
     </head>
 
     <body>
-        <h2>Responsive Design</h2>
-       
+      <div class="container">
       <!--Import jQuery before materialize.js-->
+
+      <section>
+      <nav class="top-nav red darken-4">
+        <div class="nav-wrapper">
+          <a href="../index.html" class="brand-logo">Home</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#tecnicas">Técnicas</a></li>
+            <li><a href="#media">Componentes</a></li>
+            <li><a href="#frameworks">Frameworks</a></li>
+            <li><a href="#saiba">Saiba Mais</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="#tecnicas">Técnicas</a></li>
+            <li><a href="#media">Componentes</a></li>
+            <li><a href="#frameworks">Frameworks</a></li>
+            <li><a href="#saiba">Saiba Mais</a></li>
+          </ul>
+        </div>
+      </nav>
+      </section>
+      <section>
+        <h2>Responsive Web Design</h2>
+        <p>A responsividade em interfaces surge da necessidade em se criar páginas web que apresentem o mesmo conteúdo nos diferentes dispositivos, como desktop, tablets e smatphones. Nesta abordagem, a apresentação do conteúdo é flexível e se adapta a cada resolução de tela sem perdas de compreensão e legibilidade. O termo <b><i>“Responsive Web Design”</i></b>, definido por Marcotte (2010), vem de <i>“responsive architecture” </i>(arquitetura responsiva), onde o ambiente físico responde à presença das pessoas que passam por ele. </p>
+        <p>Uma interface web responsiva responde ou se adapta a tamanhos diferentes de tela, sem ter que definir um domínio ou subdomínio específico para usuários que utilizam dispositivos móveis (Firdaus, 2015). O conteúdo do site pode ser mantido para que os usuários tenham experiências semelhantes em diferentes tamanhos de dispositivos, eliminando a necessidade de se elaborar novas interfaces para cada um deles. Embora existam algumas técnicas de projeto, seu desenvolvimento, basicamente, leva em consideração uma mistura de grids e layouts flexíveis, imagens adaptáveis e uso inteligente de CSS <i>(Cascading Style Sheets)</i> para formatação das páginas. </p>
+        <a id='tecnicas'><h3>Técnicas de projeto de interfaces responsivas</h3></a>
+        <p>O projeto de interfaces responsivas não trata apenas a adaptação do conteúdo às diferentes resoluções de tela e imagens automaticamente redimensionáveis, mas envolve uma nova forma de pensar a interface (Knight, 2011). Além dos diferentes tamanhos de tela, os dispositivos ainda podem alternar sua orientação de visualização entre paisagem e retrato, conforme se observa na Figura 1.</p>
+        <figure>
+          <img src="imagens/portrait-landscape.jpg" alt="Modos de visualização retrato e paisagem" width="80%">
+          <figcaption>Figura 1 - Modos de visualização retrato (portrait) e paisagem (landscape). Fonte: Knight (2011)</figcaption>
+        </figure>
+        <p>Para criar uma interface que se adapta a diferentes dispositivos, a navegação e a arquitetura da informação devem ser pensadas para cada situação. Não são apenas os diferentes tamanhos de tela que são levados em consideração, mas também:</p>
         <ul>
-            <li><a href="../index.html">Home</a></li>
+          <li>a forma como os usuários utilizam e navegam através do conteúdo (varia conforme o dispositivo utilizado);</li>
+          <li>imagens que devem se adaptar, reduzi-las nem sempre é a melhor solução, podendo substituí-las;</li>
+          <li>carregamento da página, que pode ser progressivo, ou seja, carrega apenas os módulos essenciais para o dispositivo no qual o usuário está navegando.</li>
         </ul>
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <a id='media'><h3>Componentes</h3></a>
+        <p>Uma interface responsiva leva em consideração dois componentes: <b><i>media queries</i></b> e <b><i>breakpoints</i></b>. </p>
+        <h4>Media Queries</h4>
+        <p>Media Queries são um tipo de regra CSS que limita o escopo de um estilo baseado em fatores definidos pela query. Cada media query especifica um tipo de mídia e um conjunto de expressões que são checadas pelo navegador. O tipo de mídia define um screen para telas digitais, um print para páginas impressas ou <i>all</i> para todos os tipos de mídia. As expressões são mais detalhadas e incluem instruções como max-width e orientation, para definir uma largura máxima e a orientação, respectivamente (Carver, 2014). A Figura 2 mostra um exemplo de código CSS que utiliza uma media query. Este código declara o tipo de mídia como <i>screen</i> com largura máxima de 768px, ideal para tablets no formato retrato.</p>
+        <figure>
+          <img src="imagens/midiaQuery.png" alt="Exemplo de código CSS que utiliza media query" width="80%">
+          <figcaption>Figura 2 - Exemplo de código CSS que utiliza media query. @media inicializa a media query que declara o tipo de mídia como screen com largura máxima de 768px.</figcaption>
+        </figure>
+        <h4>Breakpoints</h4>
+        <p>Breakpoints são as larguras da tela em pixels. Identificam limites para que a alteração do layout se adapte às necessidades de cada contexto. Pode-se utilizar medidas padrão para representar as variações de cada dispositivo, otimizando o desenvolvimento da interface. A Figura 3 ilustra diferentes <i>breakpoints</i> numa página web para representar as larguras de cada dispositivo ao qual esta página poderá ser acessada.</p>
+        <figure>
+          <img src="imagens/breakpoints.png" alt="Representações de breakpoints aplicados numa página web" width="80%">
+          <figcaption>Figura 3 - Representações de breakpoints aplicados numa página web. As diferentes larguras dos breakpoints representam cada dispositivo. Fonte: Carver (2014).</figcaption>
+        </figure>
+        <a id='frameworks'><h3><i>Frameworks</i> para interfaces web responsivas</h3></a>
+        <ul>
+          <li><a href="http://www.getskeleton.com/" target="_blank">Skeleton</a></li>
+          <li><a href="http://foundation.zurb.com" target="_blank">Foundation</a></li>
+          <li><a href="http://getbootstrap.com/2.3.2/" target="_blank">Bootstrap</a></li>
+          <li><a href="http://materializecss.com/" target="_blank">Materialize</a></li>
+        </ul>
+        <a id='saiba'><h3>Saiba mais</h3></a>
+        <p>Carver, M. The Responsive Web. New York: Manning Publications, 2014.</p>
+        <p>Firdaus, T. Responsive Web Design by Example.2.ed. New York: Packt Publishing, 2015. </p>
+        <p>Knight, K. (2011) <a href="https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/" target="_blank">Responsive Web Design: What It Is and How to Use It.</a></p>
+        <p>Marcotte, E. (2010) <a href="http://alistapart.com/article/responsive-web-design" target="_blank">Responsive Web Design</a>.</p>
+      </section>
+      <footer class="page-footer">
+        <div class="footer-copyright">
+          <div class="container">
+            <p>Desenvolvido por: Maria Amelia Eliseo</p>
+          </div>
+        </div>
+      </footer>
+      
       <script type="text/javascript" src="../js/materialize.min.js"></script>
+      </div>
     </body>
   </html>
