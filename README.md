@@ -1,21 +1,6 @@
-kldsjlkfkfsdfds
-sfdsfsddfs
-fsddfs
-fsdsfdfsddfs
+# web-mobile-mackenzie.github.io
+Este é o site da disciplina.
 
-fsddfs
-fsdsfd
-fsd
-dfsfsd
-fsd
-fsd
-fsd
-fsd
-sfdfds
-sfd
-fsd
-dfs
-fsd
-sfd
-fsdsfd
-sfd
+Vamos aprender bastante neste semestre.
+
+Obrigado!
